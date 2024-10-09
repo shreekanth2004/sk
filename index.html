@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreekanth's Personal Portfolio</title>
+    <style>
+        /* General styling */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://hips.hearstapps.com/hmg-prod/images/p90498647-highres-rolls-royce-black-ba-6419f1d68f261.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            height: 100vh; /* Set height to full viewport */
+            display: flex; /* Use flexbox for centering */
+            flex-direction: column; /* Allow stacking vertically */
+            align-items: center; /* Center horizontally */
+            justify-content: flex-start; /* Align items to the top */
+        }
+
+        /* Header styles */
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%; /* Ensure header takes full width */
+        }
+
+        /* Section styles (hidden by default) */
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            color: white;
+            display: none; /* Hide sections initially */
+            opacity: 0;
+            transform: translateY(50px); /* Start with sections slightly pushed down */
+            transition: all 0.6s ease-in-out; /* Smooth transition effect */
+        }
+
+        section.visible {
+            display: block;
+            opacity: 1;
+            transform: translateY(0); /* Slide up and fade in the section */
+        }
+
+        /* Large button styles */
+        .section-btn {
+            font-size: 24px;
+            padding: 15px;
+            margin: 10px;
+            cursor: pointer;
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            animation: fadeInUp 1s ease-in-out forwards; /* Button entrance animation */
+        }
+
+        .section-btn:hover {
+            background-color: #222;
+            transform: scale(1.1); /* Button zoom effect on hover */
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Instagram icon styling */
+        .footer-icons {
+            margin-top: 10px;
+        }
+
+        .footer-icons img {
+            width: 30px;
+            height: 30px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .footer-icons img:hover {
+            transform: scale(1.2);
+            transition: transform 0.2s;
+        }
+
+        /* Image section styling */
+        .college-img, .photography-img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            margin: 10px auto; /* Add margin to separate images */
+        }
+
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center images */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Shreekanth's Personal Portfolio</h1>
+        <p>Professional Photo Editor | Student at GMIT</p>
+    </header>
+
+    <!-- Large Buttons for Sections -->
+    <div style="text-align: center; margin-top: 100px;">
+        <button class="section-btn" onclick="showSection('about')">About Me</button>
+        <button class="section-btn" onclick="showSection('services')">Services</button>
+        <button class="section-btn" onclick="showSection('contact')">Contact</button>
+        <button class="section-btn" onclick="showSection('college')">College Details</button>
+        <button class="section-btn" onclick="showSection('photography')">My Photography</button>
+    </div>
+
+    <!-- Main Content Sections (Hidden by default) -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>My name is Shreekanth, and I am a student at GM Institute of Technology (GMIT). Alongside my studies, I am a professional photo editor with a passion for enhancing and perfecting images.</p>
+    </section>
+
+    <section id="services">
+        <h2>Services</h2>
+        <p>As a professional photo editor, I offer the following services:</p>
+        <ul>
+            <li>Photo Retouching</li>
+            <li>Color Correction</li>
+            <li>Image Restoration</li>
+            <li>Photo Manipulation</li>
+            <li>Background Removal</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>If you would like to get in touch with me, please feel free to contact me at:</p>
+        <p><strong>Phone:</strong> 9035416202</p>
+        <p><strong>Email:</strong> shreekantht11@gmail.com</p>
+    </section>
+
+    <section id="college">
+        <h2>College Details</h2>
+        <img src="https://gmit.ac.in/assets/img/slider/1.jpg" alt="GMIT College" class="college-img">
+        <p>I am currently studying at GM Institute of Technology (GMIT) in Davanagere, specializing in technology. The college has been instrumental in shaping my skills and knowledge. GM Institute of Technology is a well-established Hi-Tech Engineering Institute established in the Academic year 2001-02, National Highway No 4, 265 Km away from Bangalore. The campus is spread over 54 acres of lush green land with well planned monolithic buildings and state-of-the-art infrastructure.</p>
+    </section>
+
+    <section id="photography">
+        <h2>My Photography</h2>
+        <div class="photo-gallery">
+            <img src="https://th.bing.com/th/id/R.d90405fea21eae155a0df21e7fa1bb7f?rik=gB6Y1u8ykc20sg&riu=http%3a%2f%2fmedia.cntraveler.com%2fphotos%2f56cf6b7569d8fae9411b181a%2fmaster%2fpass%2fAdriano_Neves_Portugual_Shortlist_Open_Travel_2016.jpg&ehk=lqBxcJxinQA3P1vW4%2fibYAlmQZQsb4A9U2it5z98uq0%3d&risl=&pid=ImgRaw&r=0" alt="Photography 1" class="photography-img">
+            <img src="https://th.bing.com/th/id/OIP.ymem2QpthfL_kdg4iuTb4AAAAA?rs=1&pid=ImgDetMain" alt="Photography 2" class="photography-img">
+            <img src="https://images.locationscout.net/2018/11/torres-del-paine-national-park-chile.webp?h=1400&q=83" alt="Photography 3" class="photography-img">
+            <img src="https://iso.500px.com/wp-content/uploads/2016/01/sanfrancisco_cover.jpg" class="photography-img">
+            <img src="https://cdn.naturettl.com/wp-content/uploads/2021/02/26150226/The-Best-Travel-Photography-Locations-in-the-USA-7.jpg" class="photography-img">
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Personal Portfolio. Follow me on Instagram.</p>
+        <div class="footer-icons">
+            <a href="https://www.instagram.com/_shreekanth_11?igsh=ajhjbHFvNTY1Z3Br" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+            </a>
+        </div>
+    </footer>
+
+    <!-- JavaScript to Show Sections -->
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            var sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                section.classList.remove('visible'); // Hide all sections
+            });
+
+            // Show the clicked section with animation
+            var section = document.getElementById(sectionId);
+            section.classList.add('visible');
+        }
+    </script>
+
+</body>
+</html>
